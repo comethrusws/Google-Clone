@@ -28,7 +28,7 @@ This project is a Django-based Google Clone, i made for learning about backend c
 ![Homepage Screenshot](https://github.com/comethrusws/Google-Clone/blob/57cf38e25414513ddbf2821b463ce5587f4c72eb/Screenshot%20from%202023-12-11%2017-55-59.png)
 
 ### Search Results
-![Search Results Screenshot](https://github.com/comethrusws/Google-Clone/blob/57cf38e25414513ddbf2821b463ce5587f4c72eb/Screenshot%20from%202023-12-11%2017-56-10.pngt)
+![Search Results Screenshot](https://github.com/comethrusws/Google-Clone/blob/57cf38e25414513ddbf2821b463ce5587f4c72eb/Screenshot%20from%202023-12-11%2017-56-10.png)
 
 ## Installation
 

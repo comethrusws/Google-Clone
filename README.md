@@ -36,7 +36,3 @@ This project is a Django-based Google Clone, i made for learning about backend c
 2. Create a virtual environment and activate it.
 3. Run the server with `python manage.py runserver`.
 
-
-## License
-
-This project is licensed under the [MIT License](link_to_license).

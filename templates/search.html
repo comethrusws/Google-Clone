@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Search Results</title>
+        <style>
+            #search-bar {
+                border-radius: 24px;
+                padding: 0;
+                background-color: transparent;
+                box-shadow: none;
+                border: 1px solid #4f4f4f;
+                width: 690px;
+                height: 34px;
+            }
+            
+            #nav-bar {
+                display: grid;
+                grid-template-columns: repeat(281, 5px);
+                grid-template-rows: 65px;
+                top: 0mm;
+            }
+            
+            #option-bar {
+                position: relative;
+                left: 130px;
+                width: 832px;
+                height: 15px;
+                list-style-type: none;
+            }
+            
+            #search-bar-container {
+                margin-left: 10px;
+                margin-top: 12px;
+                grid-column: 30/50;
+            }
+            
+            #google-logo {
+                height: 30px;
+                width: 92px;
+                grid-column: 0;
+                margin-left: 16px;
+                margin-top: 19px;
+            }
+            
+            #border1 {
+                border-bottom: solid #ebebeb;
+                border-width: 1px;
+                width: 100%;
+            }
+            
+            #magnifying-glass {
+                background-color: transparent;
+                position: relative;
+                left: 642px;
+                bottom: 36px;
+                border-color: transparent;
+                fill: #4285f4;
+            }
+            
+            .icons {
+                position: relative;
+            }
+            
+            h1 {
+                color: #f2f2f2;
+                font-size: 14px;
+                font-family: Arial, sans-serif;
+                font-weight: 100;
+            }
+            
+            #main {
+                position: relative;
+                padding-left: 172px;
+                padding-top: 7px;
+            }
+            
+            h4 {
+                color: #f2f2f2;
+                font-size: 14px;
+                position: relative;
+                top: 8px;
+                font-family: arial;
+                font-weight: 100;
+            }
+            
+            h2 {
+                font-family: arial;
+                font-weight: 100;
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-family: arial;
+                font-weight: 100;
+                font-size: 14px;
+                width: 600px;
+                color: #f2f2f2;
+                position: relative;
+                bottom: 10px;
+                line-height: 20px;
+            }
+            
+            #video-links {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: start;
+            }
+            
+            .pannels {
+                height: 304px;
+                width: 210px;
+                border-radius: 8px;
+                border: 1px solid #dfe1e5;
+                margin: 5px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #frequent-questions {
+                height: 176.85px;
+                width: 652px;
+                border-radius: 8px;
+                border: 1px solid #dfe1e5;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #frequent-questions h1 {
+                color: #222;
+                font-size: 20px;
+                line-height: 1.3;
+                padding: 9px 16px;
+                width: 620px;
+                height: 44px;
+                margin: unset;
+            }
+            
+            #frequent-questions h2 {
+                font-size: 16px;
+                position: relative;
+                padding: 14px 16px;
+                line-height: 1;
+                border-top: 1px solid #e5e5e5;
+                position: relative;
+                margin: unset;
+            }
+            
+            #related-images {
+                display: flex;
+                flex-direction: column;
+                height: 249px;
+                width: 660px;
+            }
+            
+            #related-images ul {
+                list-style-type: none;
+                margin: 0px;
+                padding: 0;
+            }
+            
+            #related-images ul li {
+                display: inline;
+                padding: 5px;
+            }
+            
+            #related-images ul li a {
+                display: block;
+                padding: 8px;
+                border-radius: 18px;
+                border: 1px solid #dadce0;
+                color: #3c4043;
+                font: 400 12px arial, sans-serif;
+            }
+            
+            #image-showcase {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            
+            #image-showcase div {
+                border: 1px solid #dfe1e5;
+            }
+            
+            #related-searches {
+                margin-top: 70px;
+            }
+            
+            #related-searches ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            
+            #related-searches ul li {
+                display: initial;
+                float: unset;
+                padding-left: 30px;
+                margin: 3px 0px;
+            }
+            
+            #related-searches ul li a {
+                color: #1a0dab;
+                font-size: 16px;
+                line-height: 24px;
+            }
+            
+            #related-searches svg {
+                position: relative;
+            }
+            
+            #google-pages {
+                width: 100%;
+                height: 56px;
+                position: relative;
+                top: 40px;
+            }
+            
+            #google-pages img {
+                float: left;
+                position: relative;
+                left: 165px;
+                margin: 0px 0.5px;
+            }
+            
+            #google-pages ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                top: 25px;
+                right: 161px;
+            }
+            
+            #google-pages ul li {
+                margin: 9.3px;
+                padding: initial;
+            }
+            
+            #google-pages ul li a {
+                color: #4285f4;
+                font-size: 14px;
+            }
+            
+            footer h3 {
+                background-color: #202020;
+                width: 92%;
+                padding: 10px 0px 10px 160px;
+                border-top: 1px solid #e4e4e4;
+                border-bottom: 1px solid #e4e4e4;
+                color: #f2f2f2;
+                position: relative;
+                top: 50px;
+                z-index: 100;
+            }
+            
+            footer div ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                height: 40px;
+            }
+            
+            footer div ul li {
+                padding: 20px 15px 0px 5px;
+                position: relative;
+                left: 155px;
+                bottom: 15px;
+                font-size: 14px;
+            }
+            
+            footer div {
+                background-color: #202020;
+                line-height: 40px;
+                position: relative;
+                top: 30px;
+                width: 100.4%;
+            }
+        </style>
+    </head>
+    <body id="root" style="background-color:#202020;">
+        <header>
+            <div id="nav-bar">
+                <a href="templates/index.html">
+                    <img
+                    id="google-logo"
+                    src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                    alt="Google logo"
+                >
+                </a>
+                <form method="POST" action="search" id="search-bar-container">
+                    {% csrf_token %}
+                    <input type="text" placeholder="" id="search-bar" />
+                    <button id="magnifying-glass" type="button">
+                        <svg
+                            style="height: 24px;" 
+                            focusable="false"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                style="color: #4285f4;"
+                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                            ></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div
+                style="position: absolute; left: 160px; top: 89px; width: 50%;"
+            >
+                <span
+                    class="icons"
+                    style="
+                        left: 18px;
+                        height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                    "
+                    ><svg focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8"
+                            fill="#34A853"
+                        ></path>
+                        <path
+                            d="M10 4V2a8 8 0 0 0-8 8h2c0-3.3 2.7-6 6-6"
+                            fill="#EA4335"
+                        ></path>
+                        <path
+                            d="M4 10H2a8 8 0 0 0 8 8v-2c-3.3 0-6-2.69-6-6"
+                            fill="#FBBC04"
+                        ></path>
+                        <path
+                            d="M22 20.59l-5.69-5.69A7.96 7.96 0 0 0 18 10h-2a6 6 0 0 1-6 6v2c1.85 0 3.52-.64 4.88-1.68l5.69 5.69L22 20.59"
+                            fill="#4285F4"
+                        ></path></svg
+                ></span>
+                <span
+                    class="icons"
+                    style="
+                        left: 58px;
+                        height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                    "
+                    ><svg focusable="false" viewBox="0 0 24 24">
+                        <path
+                            style="fill: #5f6368;"
+                            d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2"
+                        ></path></svg
+                ></span>
+                <span
+                    class="icons"
+                    style="
+                        left: 114px;
+                        height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                    "
+                    ><svg focusable="false" viewBox="0 0 16 16">
+                        <path
+                            style="fill: #5f6368;"
+                            d="M7.503 0c3.09 0 5.502 2.487 5.502 5.427 0 2.337-1.13 3.694-2.26 5.05-.454.528-.906 1.13-1.358 1.734-.452.603-.754 1.508-.98 1.96-.226.452-.377.829-.904.829-.528 0-.678-.377-.905-.83-.226-.451-.527-1.356-.98-1.959-.452-.603-.904-1.206-1.356-1.734C3.132 9.121 2 7.764 2 5.427 2 2.487 4.412 0 7.503 0zm0 1.364c-2.283 0-4.14 1.822-4.14 4.063 0 1.843.86 2.873 1.946 4.177.468.547.942 1.178 1.4 1.79.34.452.596.99.794 1.444.198-.455.453-.992.793-1.445.459-.61.931-1.242 1.413-1.803 1.074-1.29 1.933-2.32 1.933-4.163 0-2.24-1.858-4.063-4.139-4.063zm0 2.734a1.33 1.33 0 11-.001 2.658 1.33 1.33 0 010-2.658"
+                        ></path></svg
+                ></span>
+                <span
+                    class="icons"
+                    style="
+                        left: 167px;
+                        height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                    "
+                    ><svg focusable="false" viewBox="0 0 24 24">
+                        <path
+                            style="fill: #5f6368;"
+                            d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5"
+                        ></path></svg
+                ></span>
+                <span
+                    class="icons"
+                    style="
+                        left: 228px;
+                        height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                    "
+                    ><svg focusable="false" viewBox="0 0 24 24">
+                        <path
+                            style="fill: #5f6368;"
+                            d="M21.11 2.89A3.02 3.02 0 0 0 18.95 2h-5.8c-.81 0-1.58.31-2.16.89L7.25 6.63 2.9 10.98a3.06 3.06 0 0 0 0 4.32l5.79 5.8a3.05 3.05 0 0 0 4.32.01l8.09-8.1c.58-.58.9-1.34.9-2.16v-5.8c0-.81-.32-1.59-.89-2.16zM20 10.85c0 .28-.12.54-.32.74l-3.73 3.74-4.36 4.36c-.41.41-1.08.41-1.49 0l-2.89-2.9-2.9-2.9a1.06 1.06 0 0 1 0-1.49l8.1-8.1c.2-.2.46-.3.74-.3l5.8-.01A1.05 1.05 0 0 1 20 5.05v5.8zM16 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2"
+                        ></path></svg
+                ></span>
+                <span
+                    class="icons"
+                    style="
+                        left: 313px;
+                        height: 16px;
+                        line-height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                    "
+                    ><svg
+                        focusable="false"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            style="fill: #5f6368;"
+                            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                        ></path></svg
+                ></span>
+            </div>
+
+            <div id="border1">
+                <style>
+                    li {
+                        float: left;
+                        font-size: 13px;
+                        font-family: arial, sans-serif;
+                        padding: 0px 23px 0px 21px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #f2f2f2;
+                    }
+                </style>
+                <ul id="option-bar">
+                    <li><a href="">All</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Maps</a></li>
+                    <li><a href="">Videos</a></li>
+                    <li><a href="">Shopping</a></li>
+                    <li><a href="">More</a></li>
+                    <li style="float: left; padding: 0px 5px 0px 65px;">
+                        <a href="">Settings</a>
+                    </li>
+                    <li style="float: left;"><a href="">Tools</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="main">
+            <h1>About 92,100,000 results (0.44 seconds)</h1>
+        </div>
+
+        {% if final_result %}
+        <b style=" position: relative; padding-left: 172px; padding-top: 7px; color: #f2f2f2;">Web Results</b>
+        <br>
+        {% for result in final_result %}
+        <div style="padding-left: 172px; padding-right: 50px;">
+            <h2 style="color: #285c94;"><a href="{{ result.1 }}">{{ result.0 }}</a></h2>
+            <h3 style="color: green;">{{ result.1 }}</h3>
+            <h3>{{ result.2 }}</h3>
+        </div><br>  
+        {% endfor %}
+        {% endif %}
+
+        <div id="google-pages">
+            <img
+            style="max-width: 2%; height: auto; bottom: 7.5px;"
+            src="https://i.ibb.co/rfpcVbJ/bigG.png"
+            alt="Big g"
+          />
+          <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/SXXW6qH/redO.png"
+            alt="Red O"
+         />
+          <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+         <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+         <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+         <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+          <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+            <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+            />
+         <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+         <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+         <img
+             style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/4Fm4pTB/yellowO.png"
+            alt="Yellow O"
+         />
+         <img
+            style="max-width: 1.5%; height: auto; top: 1px;"
+            src="https://i.ibb.co/KjbgHbr/small-g.png"
+            alt="Small g"
+         />
+         <img
+            style="max-width: 0.4%; height: auto; bottom: 7px;"
+            src="https://i.ibb.co/N3p5cJx/I.png"
+            alt="Green I"
+         />
+         <img
+            style="max-width: 1.5%; height: auto;"
+            src="https://i.ibb.co/8DxcXS3/red-e.png"
+            alt="Red e"
+         />
+         <ul>
+            <li><a style="color: #fff;">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">6</a></li>
+            <li><a href="">7</a></li>
+            <li><a href="">8</a></li>
+            <li><a href="">9</a></li>
+            <li
+                style="
+                    position: relative;
+                    padding-right: 45px;
+                    right: 3px;
+                "
+            >
+                <a href="">10</a>
+            </li>
+            <li><a href="">Next</a></li>
+         </ul>
+
+        </div>
+    
+        <div>
+            <footer>
+                <h3>
+                    Nepal
+                    <a style="padding-left: 50px;"
+                        ><b style="color: #f2f2f2; font-weight: bold;">44600, Kathmandu</b> -
+                        From your Internet address -
+                        <a href="">Use precise location</a> -
+                        <a href="">Learn more</a></a
+                    >
+                </h3>
+                <div>
+                    <ul>
+                        <li><a>Help</a></li>
+                        <li><a>Send feedback</a></li>
+                        <li><a>Privacy</a></li>
+                        <li><a>Terms</a></li>
+                    </ul>
+                </div>
+            </footer>
+    
+        </div>
+
+    </body>
+</html>
